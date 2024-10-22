@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="external.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="wrapper1">
+        <h1>Jagalah Kebersihan Lingkungan sekitar</h1>
+
+        <p>
+          Kebersihan lingkungan mempunyai peranan yang sangat penting dan tak terpisahkan dalam kehidupan manusia. Menjaga kebersihan lingkungan sama artinya menciptakan lingkungan yang sehat, bebas dari kotoran, seperti debu, sampahdan bau
+          yang tidak sedap. Dengan lingkungan yang sehat, kita tidak akan mudah terserang berbagai penyakit seperti demam berdarah, malaria, muntaber dan lainnya. Tidak hanya di bidang kesehatan, kebersihan lingkungan juga sangat
+          berpengaruh terhadap kenyamanan, keindahan dan keasrian lingkungan yang nantinya bermuara pada kedamaian. Semua ini dapat kita raih dengan melakukan perbuatan kecil dan sederhana, mulai dari menjaga kebersihan lingkungan di
+          sekitar kita.
+        </p>
+      </div>
+
+      <div class="wrapper2">
+        <figure class="images">
+          <img src="./img/figure1.jpg" alt="" />
+        </figure>
+        <p>
+          Kebersihan lingkungan juga mencerminkan kesadaran dan tanggung jawab kita sebagai manusia yang hidup berdampingan dengan alam. Mulailah dengan hal-hal kecil, seperti membuang sampah pada tempatnya, mengurangi penggunaan plastik
+          sekali pakai, hingga mengolah limbah dengan bijak. Selain itu, kita juga bisa turut serta dalam kegiatan gotong royong membersihkan lingkungan, menanam pohon untuk penghijauan, serta menjaga kelestarian sumber daya alam yang ada
+          di sekitar kita.
+        </p>
+      </div>
+
+      <div class="wrapper3">
+        <p>
+          Semakin banyak orang yang sadar akan pentingnya menjaga kebersihan, semakin besar dampak positif yang kita rasakan bersama. Lingkungan yang bersih tidak hanya menciptakan kenyamanan, tetapi juga meningkatkan kualitas hidup secara
+          keseluruhan. Udara yang segar, air yang bersih, dan tanah yang subur adalah hasil dari upaya bersama menjaga kebersihan. Maka dari itu, mari kita jadikan kebersihan sebagai budaya sehari-hari yang dimulai dari diri sendiri, karena
+          masa depan yang bersih dan sehat adalah hak setiap orang.
+        </p>
+        <figure class="images">
+          <img src="./img/figure3.jpg" alt="" />
+        </figure>
+      </div>
+
+      <div class="btn">
+        <a href="/web2.html">Kembali</a>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Select wrappers
+        const wrapper1 = document.querySelector(".wrapper1");
+        const wrapper2 = document.querySelector(".wrapper2");
+        const wrapper3 = document.querySelector(".wrapper3");
+
+        // Apply enter animations on page load
+        setTimeout(() => {
+          wrapper1.classList.add("wrapper1-enter");
+          wrapper2.classList.add("wrapper2-enter");
+          wrapper3.classList.add("wrapper3-enter");
+        }, 200); // Delay to trigger animations smoothly
+
+        // Simulate leave animations on a specific event (like clicking a button or link)
+        const btn = document.querySelector(".btn > a");
+        btn.addEventListener("click", function (e) {
+          e.preventDefault(); // Prevent default navigation
+          // Add leave animations
+          wrapper1.classList.add("wrapper1-leave");
+          wrapper2.classList.add("wrapper2-leave");
+          wrapper3.classList.add("wrapper3-leave");
+
+          // Optional: Add a redirect after animation
+          setTimeout(() => {
+            window.location.href = this.getAttribute("href");
+          }, 500); // Wait for animation to finish
+        });
+      });
+    </script>
+  </body>
+</html>

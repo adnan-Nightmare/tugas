@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS</title>
+    <style>
+      *,
+      html {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: #f2f2f2;
+        font-family: "Roboto", sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 25rem;
+        height: fit-content;
+        padding: 2rem;
+        border-radius: 1rem;
+        box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+      }
+
+      h1 {
+        text-align: center;
+        text-transform: capitalize;
+      }
+
+      ol {
+        display: flex;
+        gap: 2rem;
+        list-style-type: none;
+      }
+
+      a {
+        margin: 1rem 0;
+        position: relative;
+        display: block;
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      a::before {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 50%;
+        background: black;
+        transition: width 0.3s ease, left 0.3s ease;
+        -webkit-transition: width 0.3s ease, left 0.3s ease;
+        -moz-transition: width 0.3s ease, left 0.3s ease;
+        -ms-transition: width 0.3s ease, left 0.3s ease;
+        -o-transition: width 0.3s ease, left 0.3s ease;
+      }
+
+      a:hover::before {
+        width: 100%;
+        left: 0;
+      }
+
+      .page-enter {
+        opacity: 0;
+        transform: translateY(100%);
+      }
+      .page-enter-active {
+        opacity: 1;
+        transform: translateY(0);
+        transition: opacity 0.5s, transform 0.5s;
+      }
+
+      .page-leave {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .page-leave-active {
+        opacity: 0;
+        transform: translateY(-100%);
+        transition: opacity 0.5s, transform 0.5s;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <h1>pratikum 2</h1>
+        <ol>
+          <li><a class="To" href="/cssinline.html">CSS Inline</a></li>
+          <li><a class="To" href="/cssinternal.html">CSS Internal</a></li>
+          <li><a class="To" href="/externalcss.html">CSS External</a></li>
+        </ol>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
