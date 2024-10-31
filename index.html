@@ -1,111 +1,64 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CSS</title>
-    <style>
-      *,
-      html {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
+<div class="flex p-5 px-32">
+        <img src="https://placehold.co/600x400/png" alt="..." class="w-[28rem] h-96">
+        <div class="w-[30rem] px-5">
+            <h2 class="font-bold text-xl capitalize">{{ $title }}</h2>
+            <h1 class="font-bold text-3xl mt-5">$ <span>{{ $price }}</span></h1>
 
-      body {
-        background-color: #f2f2f2;
-        font-family: "Roboto", sans-serif;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        overflow: hidden;
-      }
+            <h3 class="mt-10 font-semibold">Pilihan Model: <span class="text-gray-500">Clear</span></h3>
+            <div class="grid grid-cols-4 gap-2 mt-5">
+                @for ($i = 0; $i<5 ; $i++)  
+                <button class="border rounded-lg flex p-1 gap-2 w-fit items-center">
+                    <img src="https://placehold.co/600x400/png" alt="..." class="rounded-lg w-7 h-7">
+                    <h5>Wheat</h5>
+                </button>
+                @endfor
+            </div>
 
-      .container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 25rem;
-        height: fit-content;
-        padding: 2rem;
-        border-radius: 1rem;
-        box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-      }
+            <div class="mt-5">
+                <div class="flex gap-5 mb-3">
+                    <button class="border-b border-black">Detail</button>
+                    <button>Spesifikasi</button>
+                    <button>Info Penting</button>
+                </div>
 
-      h1 {
-        text-align: center;
-        text-transform: capitalize;
-      }
+                <div id="Detail">
+                    <h4 class="text-gray-600">Kondisi: <span class="text-black">Baru</span></h4>
+                    <h4 class="text-gray-600">Min. Pemesanan: <span class="text-black">1 Buah</span></h4>
+                    <h4 class="text-gray-600">Etalase: <span class="text-black">ANL studio</span></h4>
 
-      ol {
-        display: flex;
-        gap: 2rem;
-        list-style-type: none;
-      }
+                    <br>
 
-      a {
-        margin: 1rem 0;
-        position: relative;
-        display: block;
-        color: black;
-        text-decoration: none;
-        cursor: pointer;
-      }
+                    <p>{!! nl2br(e($body)) !!}</p>
+                </div>
+            </div>
+        
+        </div>
 
-      a::before {
-        content: "";
-        position: absolute;
-        width: 0;
-        height: 2px;
-        bottom: 0;
-        left: 50%;
-        background: black;
-        transition: width 0.3s ease, left 0.3s ease;
-        -webkit-transition: width 0.3s ease, left 0.3s ease;
-        -moz-transition: width 0.3s ease, left 0.3s ease;
-        -ms-transition: width 0.3s ease, left 0.3s ease;
-        -o-transition: width 0.3s ease, left 0.3s ease;
-      }
+        <div class="border rounded-lg w-52 h-fit p-2">
+            <h2 class="font-semibold">Atur jumlah dan catatan</h2>
+            <div class="flex items-center my-5 gap-2">
+                <img src="https://placehold.co/600x400/png" alt="" class="rounded-lg w-14 h-14">
+                <p>Brow</p>
+            </div>
 
-      a:hover::before {
-        width: 100%;
-        left: 0;
-      }
+            <div class="flex gap-2">
+                <input type="number" value="1" class="border rounded-lg w-20 pl-8" required>
+                <p class="font-semibold">Stock: <span class="text-red-500 font-semibold">Sisa 9</span></p>
+            </div>
 
-      .page-enter {
-        opacity: 0;
-        transform: translateY(100%);
-      }
-      .page-enter-active {
-        opacity: 1;
-        transform: translateY(0);
-        transition: opacity 0.5s, transform 0.5s;
-      }
+            <div class="flex justify-between mt-10">
+                <div>
+                    SubTotal
+                </div>
+                <div>
+                    <h4 class="font-bold">$ {{ $price }}</h4>
+                </div>
+            </div>
+            <div class="flex flex-col gap-2 mt-4">
+                <button class="bg-green-600 rounded-lg text-white p-1">+ Keranjang</button>
+                <button class="border border-green-600 rounded-lg text-green-600 p-1">Beli Langsung</button>
+            </div>
 
-      .page-leave {
-        opacity: 1;
-        transform: translateY(0);
-      }
-      .page-leave-active {
-        opacity: 0;
-        transform: translateY(-100%);
-        transition: opacity 0.5s, transform 0.5s;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <div>
-        <h1>pratikum 2</h1>
-        <ol>
-          <li><a class="To" href="cssinline.html">CSS Inline</a></li>
-          <li><a class="To" href="cssinternal.html">CSS Internal</a></li>
-          <li><a class="To" href="externalcss.html">CSS External</a></li>
-        </ol>
-      </div>
+        </div>
+
     </div>
-
-    <script src="script.js"></script>
-  </body>
-</html>
